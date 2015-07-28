@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727175848) do
+ActiveRecord::Schema.define(version: 20150728180955) do
 
   create_table "addmissions", force: true do |t|
     t.string   "first_name"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 20150727175848) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "college_name"
+    t.string   "university_name"
+    t.string   "qualification"
+    t.integer  "passing_year"
+    t.boolean  "driving_lecense"
+    t.boolean  "voter_id"
+    t.boolean  "adhar_id"
+    t.boolean  "passport"
+    t.boolean  "pan_card"
   end
 
 end

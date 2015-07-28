@@ -54,6 +54,65 @@
     </div>
   </div>
 
+  <h3>Previous Institutional Details.</h3>
+  <div class="control-group">
+    <%= f.label :college_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :college_name, :class => 'text_field',:placeholder => 'Enter School Name', :required => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :university_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :university_name, :class => 'text_field',:placeholder => 'Enter University Name', :required => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :qualification, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :qualification, :class => 'text_field',:placeholder => 'Enter Qualification', :required => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :passing_year, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :passing_year, :class => 'text_field',:placeholder => 'Enter Year of Passout', :required => true %>
+    </div>
+  </div>
+
+  <h3>Additional Details.</h3>
+
+  <div class="control-group">
+    <%= f.label :driving_license, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :driving_license, :class => 'check_box' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :voter_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :voter_id, :class => 'check_box' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :adhar_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :adhar_id, :class => 'check_box' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :passport, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :passport, :class => 'check_box' %>
+    </div>
+  </div>
+
   <div class="form-actions">
     <%= f.submit'Save', :class => 'btn btn-success' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

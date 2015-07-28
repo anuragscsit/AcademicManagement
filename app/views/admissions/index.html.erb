@@ -1,0 +1,53 @@
+<%- model_class = Admission -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:middle_name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th><%= model_class.human_attribute_name(:father_name) %></th>
+      <th><%= model_class.human_attribute_name(:mother_name) %></th>
+      <th><%= model_class.human_attribute_name(:date_of_birth) %></th>
+      <th><%= model_class.human_attribute_name(:age) %></th>
+      <th><%= model_class.human_attribute_name(:contact) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admissions.each do |admission| %>
+      <tr>
+        <td><%= link_to admission.id, admission_path(admission) %></td>
+        <td><%= admission.first_name %></td>
+        <td><%= admission.middle_name %></td>
+        <td><%= admission.last_name %></td>
+        <td><%= admission.father_name %></td>
+        <td><%= admission.mother_name %></td>
+        <td><%= admission.date_of_birth %></td>
+        <td><%= admission.age %></td>
+        <td><%= admission.contact %></td>
+        <td><%= admission.email %></td>
+        <td><%=l admission.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admission_path(admission), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admission_path(admission),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admission_path,
+            :class => 'btn btn-success' %>
+<%= link_to 'Download', '/admissions.pdf', :class => 'btn btn-success'%>

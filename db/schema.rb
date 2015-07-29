@@ -11,21 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728180955) do
-
-  create_table "addmissions", force: true do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.string   "father_name"
-    t.string   "mother_name"
-    t.string   "date_of_birth"
-    t.integer  "age"
-    t.string   "contact"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20150729175455) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -57,15 +43,27 @@ ActiveRecord::Schema.define(version: 20150728180955) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "college_name"
-    t.string   "university_name"
-    t.string   "qualification"
-    t.integer  "passing_year"
     t.boolean  "driving_lecense"
     t.boolean  "voter_id"
     t.boolean  "adhar_id"
     t.boolean  "passport"
     t.boolean  "pan_card"
+    t.string   "college_name"
+    t.string   "university_name"
+    t.string   "qualification"
+    t.integer  "passong_year"
   end
+
+  create_table "gardians", force: true do |t|
+    t.string   "name"
+    t.string   "contact"
+    t.string   "email"
+    t.text     "address"
+    t.integer  "admission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "gardians", ["admission_id"], name: "index_gardians_on_admission_id"
 
 end
